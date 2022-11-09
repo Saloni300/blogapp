@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+    <a href="index.html" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Riddle</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
+            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+            <a href="{% url 'service' %}" class=" nav-item nav-link">Services</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                <div class="dropdown-menu m-0">
+                    <a href="{% url 'blog' %}" class="dropdown-item">Blog Grid</a>
+                    <a href="{% url 'detail' %}" class="dropdown-item">Blog Detail</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu m-0">
+                    <a href="{% url 'price' %}" class="dropdown-item">Pricing Plan</a>
+                    <a href="{% url 'feature' %}" class="dropdown-item">Our features</a>
+                    <a href="{% url 'team' %}" class="dropdown-item">Team Members</a>
+                    <a href="{% url 'testimonial' %}" class="dropdown-item">Testimonial</a>
+                    <a href="{% url 'quote' %}" class="dropdown-item">Free Quote</a>
+                </div>
+            </div>
+            <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+        </div>
+        {% comment %} <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton> {% endcomment %}
+        {% if request.path == '/blog/' %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}?next={{request.path}}" class="btn btn-light text-dark py-2 px-4  ms-3">Logout</a>
+        {% comment %} <a href="#" class="nav-item nav-link text-dark px-2"><h5>{{user.username}}</h></a> {% endcomment %}
+        <h5 class="m-3"><i class="fa fa-user-tie me-2"></i>{{user.username}}</h5>
+
+        {% else %}
+        <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-light py-2 px-4  ms-3">Login</a>
+        <a href="{% url 'register' %}?next={{request.path}}" class="btn btn-primary py-2 px-4 ms-3">Sign Up</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</nav>
