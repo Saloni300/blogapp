@@ -8,10 +8,10 @@ __pycache__/
 *.pytest_cache
 .coverage
 
-# database & logs
-*.db
-*.sqlite3
-*.log
+# # database & logs
+# *.db
+# *.sqlite3
+# *.log
 
 # venv
 env
@@ -20,7 +20,7 @@ venv
 .venv
 
 # other
-.DS_Store
+# .DS_Store
 
 # javascript
 package-lock.json
