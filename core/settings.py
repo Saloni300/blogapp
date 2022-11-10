@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.home',  # Enable the inner home (home)
     'apps.BlogApp',
-    'crispy_forms',
+    # 'crispy_forms',
     
 ]
 

@@ -9,7 +9,7 @@ class UserImageForm(forms.ModelForm):
         model = UploadImage
         fields = '__all__'
         
-
+"""
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
 
@@ -23,3 +23,5 @@ class NewUserForm(UserCreationForm):
 		if commit:
 			user.save()
 		return user
+
+"""

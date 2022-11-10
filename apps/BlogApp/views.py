@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import Group
 
-from apps.BlogApp.forms import NewUserForm, UserImageForm
+# from apps.BlogApp.forms import NewUserForm, UserImageForm
 from apps.BlogApp.models import UploadImage , Blog
 
 from . import templates
@@ -89,7 +89,7 @@ def teamPage(request):
 def testimonialPage(request):
     return render(request, "website/testimonial.html")
 
-
+"""
 def register_request(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)
@@ -142,3 +142,5 @@ def logout_request(request):
     messages.info(request, "You have successfully logged out.")
     return HttpResponseRedirect(redirect_to)
     # return redirect("main:homepage")
+
+"""
